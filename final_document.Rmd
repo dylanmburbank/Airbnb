@@ -1,6 +1,6 @@
 ---
 #title: "Explaining High Booking Airbnbs in Hawaii"
-#author: "Team 1: Claire Plourde, Dylan Burbank, Yujie Zheng,sahithya koneru"
+#author: "Team 1: Dylan Burbank, Claire Plourde, Yujie Zheng"
 #date: "May 16th, 2024"
 output:
   pdf_document:
@@ -75,7 +75,7 @@ After completing text analysis, we also added five binary fields to indicate cer
 
 ### Exploratory Data Analysis
 
-Our exploratory data analysis of the Hawaii accommodation listings overall revealed several key insights. We first analyzed the listings overall before diving deeper into each island. Firstly, the island significantly influences booking rates. Maui has the highest high booking rate at just over 12% of listings and Molokai has the lowest at 5% of listings.
+Our exploratory data analysis of the Hawaii accommodation listings overall revealed several key insights. We first analyzed the listings overall before diving deeper into each island. Our first finding found that the island chosen significantly influences booking rates. Maui has the highest high booking rate at just over 12% of listings and Molokai has the lowest at 5% of listings.
 
 ```{r, echo=FALSE}
 #High booking by island
@@ -88,7 +88,7 @@ islands %>% group_by(market) %>% summarise_at(vars(high_booking),
   ggtitle("High Booking Rate by Island")
 ```
 
-Then, we did analysis of airbnb prices.
+Then, we did analysis of Airbnb prices.
 
 The distribution of Airbnb prices across different room types: Entire home/apt, Hotel room, Private room, and Shared room. The key observations are:
 
@@ -131,18 +131,12 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-# Load the data
 hawaii_data <- read_csv("/cloud/project/Hawaii/hawaii_clean_data.csv")
 
-# Histogram of a numeric variable
 ggplot(hawaii_data, aes(x = accommodates)) +
   geom_histogram(bins = 30, fill = "blue", color = "white")
-
-# Boxplot for comparing a numeric and categorical variable
 ggplot(hawaii_data, aes(x = room_type, y = price)) +
   geom_boxplot()
-
-# Correlation plot between two numeric variables
 plot(hawaii_data$bedrooms, hawaii_data$price, main = "Correlation between Bedrooms and Price",
      xlab = "Bedrooms", ylab = "Price", pch = 19, col = "blue")
 
@@ -218,7 +212,6 @@ median_prices <- data.frame(
   )
 )
 
-# Create a bar chart
 ggplot(median_prices, aes(x = Villa_Type, y = Median_Price, fill = Villa_Type)) +
   geom_bar(stat = "identity", position = position_dodge(), width = 0.7) +
   ggtitle("Median Price Comparison for Villa Types") +
@@ -565,4 +558,6 @@ cat("Detection Rate:", detection_rate, "\n")
 cat("Detection Prevalence:", detection_prevalence, "\n")
 cat("Balanced Accuracy:", balanced_accuracy, "\n")
 ```
+
+
 
