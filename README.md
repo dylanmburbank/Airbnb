@@ -1,36 +1,4 @@
----
-#title: "Explaining High Booking Airbnbs in Hawaii"
-#author: "Team 1: Dylan Burbank, Claire Plourde, Yujie Zheng"
-#date: "May 16th, 2024"
-output:
-  pdf_document:
-    keep_tex: true
-    toc: true
-    toc_depth: 3
-    latex_engine: xelatex
-#indent: true
-header-includes:
-  - \setlength{\parindent}{4em}
-  - \setlength{\parskip}{0em}
----
 
-```{r setup, echo=FALSE, message=FALSE}
-#libraries
-# echo = FALSE does not show the code in the final document
-library(readr)
-library(magrittr)
-library(dplyr)
-library(ggplot2)
-library(knitr)
-library(caret)
-library(xgboost)
-```
-
-```{r, echo=FALSE, message=FALSE}
-#Import data
-# message = FALSE suppresses automatic output
-data <- read_csv("Hawaii/hawaii_clean_data.csv")
-```
 
 ## Executive Summary
 
