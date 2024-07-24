@@ -132,7 +132,9 @@ ggplot(data, aes(x = host_is_superhost, y = amenities_count, fill = host_is_supe
   labs(title = "Amenities Count by Superhost Status", x = "Is Superhost", y = "Amenities Count")
 
 ```
-![image](https://github.com/user-attachments/assets/b12db2cd-dcc5-4bbd-a0e6-26cb21153a4f)
+![image](https://github.com/user-attachments/assets/7cae1b81-8a8f-48a0-8dd8-e885e55c97ed)
+![image](https://github.com/user-attachments/assets/dfb2cf17-def2-46f7-9d7b-f79cf73e8c98)
+
 
 When analyzing property types, there was one specific insight that stood out. Villas that had "beachfront" listed in the amenities column had a high booking rate of 0.382, while villas without "beachfront" listed in the amenities column had a high booking of 0.092.
 
@@ -159,6 +161,7 @@ ggplot(booking_summary, aes(x = Villa_Type, y = High_Booking_Rate, fill = Villa_
   theme_minimal()
 
 ```
+![image](https://github.com/user-attachments/assets/b12db2cd-dcc5-4bbd-a0e6-26cb21153a4f)
 
 We then decided to compare the median price between beachfront and non-beachfront villas. We found that the median price of beachfront villas was \$1680, while the median price of non-beachfront villas was \$621.50.
 
@@ -179,6 +182,7 @@ ggplot(median_prices, aes(x = Villa_Type, y = Median_Price, fill = Villa_Type)) 
   scale_fill_manual(values = c("lightblue", "lightgreen")) +
   theme_minimal()
 ```
+![image](https://github.com/user-attachments/assets/aba02464-7823-407f-a45b-a15f202f41be)
 
 This analysis shows that beachfront villas seem to be in very high demand, with an extremely high high booking rate compared to the rest of the data as well as an extremely high median nightly price. Even though villas with no beachfront seem to be considerably cheaper than those with a beachfront, their high booking rate is considerably lower.
 
