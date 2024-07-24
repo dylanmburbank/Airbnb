@@ -193,8 +193,6 @@ This analysis shows that beachfront villas seem to be in very high demand, with 
 
 We then analyzed the property types on each island. The breakdown below shows the top property types on each island, along with the share of the listings on the island and the high booking rate.
 
-<table>
-<caption><span id="tab:table2">Maui Top Property Types </span></caption>
 
 Property Type   % of Maui Listings        High Booking Rate
 -------------   ----------                -------------------
@@ -204,10 +202,7 @@ Villa           5.4%                      1.5%
 House           3%                        7.6%
 Resort          2%                        40%
 
-</table>
 
-<table>
-<caption><span id="tab:table2">The Big Island Top Property Types </span></caption>
 
 Property Type           % of Big Island Listings            High Booking Rate
 -------------           ----------                          -------------------
@@ -217,10 +212,7 @@ Apartment               7.5%                                20.9%
 Guest Suite             5.3%                                2.6%
 Private Room in house   2%                                  15.2%
 
-</table>
 
-<table>
-<caption><span id="tab:table2">Molokai Top Property Types </span></caption>
 
 Property Type   % of Molokai Listings             High Booking Rate
 -------------   ----------                        -------------------
@@ -230,10 +222,7 @@ Apartment       20.1%                             11.8%
 House           9.3%                              0%
 Cottage         2.9%                              40%
 
-</table>
 
-<table>
-<caption><span id="tab:table2">Oahu Top Property Types </span></caption>
 
 Property Type           % of Oahu Listings                High Booking Rate
 -------------           ----------                        -------------------
@@ -243,10 +232,7 @@ House                   12.3%                             9%
 Private room in house   4.7%                              10.5%
 Guest Suite             2.9%                              7.8%
 
-</table>
 
-<table>
-<caption><span id="tab:table2">Kauai Top Property Types </span></caption>
 
 Property Type           % of Kauai Listings                High Booking Rate
 -------------           ----------                        -------------------
@@ -256,7 +242,7 @@ Apartment               7.7%                              13.4%
 Townhouse               4%                                1.9%
 Villa                   3.8%                              13.1%
 
-</table>
+
 
 ### Choosing Models
 
