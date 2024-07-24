@@ -55,6 +55,7 @@ islands %>% group_by(market) %>% summarise_at(vars(high_booking),
   labs(y = "High Booking Rate", x = "Island") +
   ggtitle("High Booking Rate by Island")
 ```
+![image](https://github.com/user-attachments/assets/8ad6780a-58d5-43a2-b415-0677ca57e820)
 
 Then, we did analysis of Airbnb prices.
 
