@@ -92,39 +92,28 @@ The correlation between the number of bedrooms and the price of Airbnb listings.
    - Listings with 2 to 4 bedrooms show a diverse price distribution, reflecting a variety of factors at play, such as location, amenities, and property type.
    - Properties with 6 or more bedrooms are less common and exhibit a wider range of prices, indicating a niche market.
 
-These visualizations provide a comprehensive overview of the Airbnb pricing landscape. The first graph highlights the variability in pricing across different room types, with entire homes/apartments and private rooms showing the most significant price ranges. The second graph underscores the influence of bedroom count on price, while also pointing to other contributing factors for high prices in certain listings. Together, these insights can inform hosts and guests about market trends and expectations in the Airbnb ecosystem.
+These visualizations provide a comprehensive overview of the Airbnb pricing landscape. The first graph highlights the variability in pricing across different room types, with entire homes/apartments and private rooms showing the most significant price ranges. The second graph shows the inner quartile of the median prices by room type, showing where the majority of rooms in each room type were priced.
 
 ```{r, echo=FALSE, message=FALSE}
-# Load necessary libraries
-library(readr)
-library(dplyr)
-library(ggplot2)
+hawaii_data <- read_csv("/Users/dylanburbank/Downloads/hawaii_clean_data.csv")
 
-hawaii_data <- read_csv("/cloud/project/Hawaii/hawaii_clean_data.csv")
-
-ggplot(hawaii_data, aes(x = accommodates)) +
-  geom_histogram(bins = 30, fill = "blue", color = "white")
 ggplot(hawaii_data, aes(x = room_type, y = price)) +
   geom_boxplot()
-plot(hawaii_data$bedrooms, hawaii_data$price, main = "Correlation between Bedrooms and Price",
-     xlab = "Bedrooms", ylab = "Price", pch = 19, col = "blue")
+iqr <- IQR(hawaii_data$price, na.rm = TRUE)
+median_price <- median(hawaii_data$price, na.rm = TRUE)
+lower_bound <- median_price - 1.5 * iqr
+upper_bound <- median_price + 1.5 * iqr
+ggplot(hawaii_data, aes(x = room_type, y = price)) +
+  geom_boxplot() +
+  coord_cartesian(ylim = c(lower_bound, upper_bound)) +
+  labs(title = "Room Type vs Price (Zoomed to Middle Quartile)",
+       x = "Room Type",
+       y = "Price")
 
 ```
+![image](https://github.com/user-attachments/assets/eba766e6-ff44-4d9d-aa81-9167c664102c)
+![image](https://github.com/user-attachments/assets/60f2cbb6-74f8-4ed5-9d25-37bb84cda26a)
 
-The analysis of relationships between variables, such as price, accommodations, and review scores, showed that while larger properties tend to command higher prices, higher prices do not necessarily correlate with higher booking rates or better reviews.
-
-```{r, echo=FALSE, message=FALSE}
-library(reshape2)
-library(ggplot2)
-selected_data <- data %>% 
-  select(high_booking, accommodates, bathrooms, bedrooms, beds, price, minimum_nights, maximum_nights, review_scores_rating, reviews_per_month, host_listings_count)
-
-cor_matrix <- cor(selected_data, use = "complete.obs")
-
-melted_cor_matrix <- melt(cor_matrix)
-ggplot(melted_cor_matrix, aes(Var1, Var2, fill = value)) +
-geom_tile(color = "white") +scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 0, limit = c(-1, 1), space = "Lab", name="Correlation") +theme_minimal() +theme(axis.text.x = element_text(angle = 45, hjust = 1))        
-```
 
 Superhosts distinguish themselves through superior responsiveness, and generally offer more amenities. These factors may contribute to their higher booking rates, emphasizing the importance of quality service and responsiveness in the competitive vacation rental market.
 
@@ -143,6 +132,7 @@ ggplot(data, aes(x = host_is_superhost, y = amenities_count, fill = host_is_supe
   labs(title = "Amenities Count by Superhost Status", x = "Is Superhost", y = "Amenities Count")
 
 ```
+![image](https://github.com/user-attachments/assets/b12db2cd-dcc5-4bbd-a0e6-26cb21153a4f)
 
 When analyzing property types, there was one specific insight that stood out. Villas that had "beachfront" listed in the amenities column had a high booking rate of 0.382, while villas without "beachfront" listed in the amenities column had a high booking of 0.092.
 
