@@ -306,6 +306,11 @@ ggplot(maui_low_booking_resorts, aes(x = accommodates)) +
        y = "Frequency") +
   theme_minimal()
 ```
+![image](https://github.com/user-attachments/assets/70e08b5c-c5cb-4c93-bdf3-92c9ab55aae9)
+![image](https://github.com/user-attachments/assets/19047a27-ad40-4986-a9b1-ac318324ffb3)
+![image](https://github.com/user-attachments/assets/f7da35f2-6b38-4a2a-9902-cc352b3d1da5)
+![image](https://github.com/user-attachments/assets/7b6febef-2eaa-4450-a27f-c031a225d82e)
+
 
 For an investor looking to invest in Maui resort, the deal may seem lucrative. However, it is important to remember that Airbnb listings in resort rooms are usually from third party entities, which likely explains why there are so very few listings in this dataset. The median nightly price for resorts on Maui is \$489, while the median nightly price for high booking resorts was \$225 and the median nightly price for non-high booking resorts was \$680. High booking rooms seemed to be priced between \$200-\$300, while non-high booking rooms seem to be priced above this, so setting a competitive nightly price will be imperative. It's also worth noting that when analyzing the accommodates variable, all high booking resorts accommodated four or more people, while the low booking resorts had 17 observations where the room only accommodated two people. If an investor is looking to invest in resort rooms on Maui, our recommendations are that they purchase rooms where they will be able to set a competitive nightly price ideally between \$200-\$300, as well as ensuring that they are purchasing rooms that can be accommodated by four or more people.
 
