@@ -1,4 +1,6 @@
 This project was an assigned graduate capstone project at the culmination of my Master of Science in Business Analytics program at UNH.
+In initial steps of the project, used various modeling methods in R to predict high booking rate of listings on Airbnb data.
+In latter steps, tasked with exploring causal discovery into high booking rate of data specific to Hawaii market.
 
 ## Executive Summary
 
