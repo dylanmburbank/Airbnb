@@ -1,4 +1,4 @@
-
+This project was an assigned graduate capstone project at the culmination of my Master of Science in Business Analytics program at UNH.
 
 ## Executive Summary
 
